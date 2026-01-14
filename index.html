@@ -485,21 +485,7 @@
 
     <!-- Chat Widget Container - Amazon Connect Integration Point -->
     <div class="chat-widget-container">
-        <!-- ============================================ -->
-        <!-- AMAZON CONNECT CHAT WIDGET PLACEHOLDER -->
-        <!-- Replace the content below with your Amazon Connect widget code -->
-        <!-- ============================================ -->
-        <div class="chat-placeholder" id="chatButton" onclick="initializeChat()">
-            <svg class="chat-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z" fill="white"/>
-                <circle cx="8" cy="10" r="1" fill="white"/>
-                <circle cx="12" cy="10" r="1" fill="white"/>
-                <circle cx="16" cy="10" r="1" fill="white"/>
-            </svg>
-        </div>
-        <!-- ============================================ -->
-        <!-- END AMAZON CONNECT WIDGET PLACEHOLDER -->
-        <!-- ============================================ -->
+        <script type="text/javascript"> (function(w, d, x, id){ s=d.createElement('script'); s.src='https://nova-sonic-connect-poc.my.connect.aws/connectwidget/static/amazon-connect-chat-interface-client.js'; s.async=1; s.id=id; d.getElementsByTagName('head')[0].appendChild(s); w[x] = w[x] || function() { (w[x].ac = w[x].ac || []).push(arguments) }; })(window, document, 'amazon_connect', 'c1f4d7f2-b0db-469e-9ed4-55aefa0babb5'); amazon_connect('styles', { iconType: 'CHAT_VOICE', openChat: { color: '#ffffff', backgroundColor: '#123456' }, closeChat: { color: '#ffffff', backgroundColor: '#123456'} }); amazon_connect('snippetId', 'QVFJREFIaXdlaTllQXR1SnQyK1JZc1Z3dWE3clBZQjQvWm15emlVb25scEltc3BJNmdIa1J4d2hleE15K25MTThVOG1sN0RwQUFBQWJqQnNCZ2txaGtpRzl3MEJCd2FnWHpCZEFnRUFNRmdHQ1NxR1NJYjNEUUVIQVRBZUJnbGdoa2dCWlFNRUFTNHdFUVFNbzFUc3JFNHBGU21mek5BeEFnRVFnQ3RzK1JBMFJmWUFxWUkxbS93NkZHTHdidXZyaXp6VUhlZ3Y0Y3ZuVDJOb2xhU1hRcTdrL3VOTkRoeWc6OjZpanV1MkhqUjAxdGdFSEZzTzVmYS9GeUswRGdXYTltTG13REt5UVErNTVIalpBV2RIVk5SNTdXbWgwYUhub0ZTRlI3OS9MUlRrL2o0YVo5aUk5UEZ2ZjEvdmttYkJxQWVCWEEyU3E0bmlDYjBkbXhKUGdUUmZXbFA1QStvdDJQWm5KcTFBRmFlUzJaV3BId2hFTm51QUpvYWsvTjZ5WT0='); amazon_connect('supportedMessagingContentTypes', [ 'text/plain', 'text/markdown', 'application/vnd.amazonaws.connect.message.interactive', 'application/vnd.amazonaws.connect.message.interactive.response' ]); </script>
     </div>
 
     <script>
