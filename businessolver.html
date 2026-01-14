@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Businessolver - Benefits Technology, Powered by People</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+        }
+
+        /* Top Banner */
+        .top-banner {
+            background-color: #002856;
+            color: white;
+            padding: 12px 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            position: relative;
+        }
+
+        .top-banner a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .banner-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.2rem;
+            cursor: pointer;
+            padding: 0 20px;
+        }
+
+        .banner-arrow.left {
+            left: 20px;
+        }
+
+        .banner-arrow.right {
+            right: 20px;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: white;
+            padding: 20px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #ff8c00, #ffa500);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .logo-text .orange {
+            color: #ff8c00;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 35px;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-menu li a {
+            color: #1a1a1a;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu li a:hover {
+            color: #ff8c00;
+        }
+
+        .nav-menu li a::after {
+            content: '∨';
+            font-size: 0.7rem;
+            margin-left: 2px;
+        }
+
+        .nav-menu li:last-child a::after {
+            content: '';
+        }
+
+        .nav-right {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .search-icon {
+            cursor: pointer;
+            font-size: 1.3rem;
+            color: #1a1a1a;
+        }
+
+        .login-btn {
+            color: #1a1a1a;
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .login-btn::after {
+            content: '∨';
+            font-size: 0.7rem;
+        }
+
+        .contact-btn {
+            background-color: white;
+            color: #1a1a1a;
+            border: 2px solid #1a1a1a;
+            padding: 10px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .contact-btn:hover {
+            background-color: #1a1a1a;
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            padding: 80px 60px;
+            max-width: 1400px;
+            margin: 0 auto;
+            align-items: center;
+        }
+
+        .hero-left {
+            padding-right: 40px;
+        }
+
+        .hero-tagline {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #002856;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .smile-icon {
+            width: 30px;
+            height: 30px;
+            border: 2px solid #002856;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            color: #002856;
+            line-height: 1.2;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: #4a4a4a;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .cta-btn {
+            padding: 15px 35px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 2px solid #002856;
+        }
+
+        .cta-primary {
+            background-color: white;
+            color: #002856;
+        }
+
+        .cta-primary:hover {
+            background-color: #002856;
+            color: white;
+        }
+
+        .cta-secondary {
+            background-color: white;
+            color: #002856;
+        }
+
+        .cta-secondary:hover {
+            background-color: #002856;
+            color: white;
+        }
+
+        /* Hero Right - Image and Stats */
+        .hero-right {
+            position: relative;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 500px;
+            background: linear-gradient(135deg, #e0e0e0 0%, #c0c0c0 100%);
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .hero-image-overlay {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px 40px;
+            border-radius: 10px;
+            text-align: center;
+            color: #002856;
+            font-weight: 600;
+            font-size: 1.1rem;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-card {
+            position: absolute;
+            background: white;
+            padding: 25px 35px;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+            z-index: 10;
+        }
+
+        .stat-card h3 {
+            font-size: 2.5rem;
+            color: #002856;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .stat-card p {
+            font-size: 0.9rem;
+            color: #4a4a4a;
+            line-height: 1.5;
+            max-width: 250px;
+        }
+
+        .stat-top-left {
+            top: -20px;
+            left: -40px;
+        }
+
+        .stat-bottom-left {
+            bottom: -30px;
+            left: 20px;
+        }
+
+        .stat-bottom-right {
+            bottom: 20px;
+            right: -60px;
+        }
+
+        /* Chat Widget Container */
+        .chat-widget-container {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+        }
+
+        .chat-placeholder {
+            width: 65px;
+            height: 65px;
+            background: linear-gradient(135deg, #ff8c00 0%, #ff6b00 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 6px 25px rgba(255, 140, 0, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .chat-placeholder:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 30px rgba(255, 140, 0, 0.6);
+        }
+
+        .chat-icon {
+            width: 32px;
+            height: 32px;
+            fill: white;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .hero-section {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .hero-right {
+                margin-top: 60px;
+            }
+
+            .stat-card {
+                position: relative;
+                top: 0 !important;
+                left: 0 !important;
+                right: 0 !important;
+                bottom: 0 !important;
+                margin: 20px;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 15px 20px;
+            }
+
+            .nav-menu {
+                display: none;
+            }
+
+            .hero-section {
+                padding: 40px 20px;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+            }
+
+            .cta-btn {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Banner -->
+    <div class="top-banner">
+        <span class="banner-arrow left">‹</span>
+        <a href="#">New Businessolver Dashboard</a>
+        <span class="banner-arrow right">›</span>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">
+            <div class="logo-icon">☺</div>
+            <div class="logo-text">busines<span class="orange">solver</span></div>
+        </div>
+        
+        <ul class="nav-menu">
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Solutions</a></li>
+            <li><a href="#">Resources</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Careers</a></li>
+        </ul>
+
+        <div class="nav-right">
+            <div class="search-icon">🔍</div>
+            <a href="#" class="login-btn">Login</a>
+            <a href="#" class="contact-btn">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-left">
+            <div class="hero-tagline">
+                <div class="smile-icon">☺</div>
+                <span>Benefits Technology, Powered by People</span>
+            </div>
+
+            <h1 class="hero-title">Let's Transform Benefits Together</h1>
+
+            <p class="hero-description">
+                At Businessolver we're all about delivering delight with our benefits technology and services. Our innovative platform tackles your unique benefits challenges and creates a personal experience for your people.
+            </p>
+
+            <p class="hero-description">
+                But we don't stop there. Our team of Solvers works as an extension of yours, providing empathetic, expert services every step of the way. It's technology powered by people, that's tech with heart.
+            </p>
+
+            <div class="hero-cta">
+                <a href="#" class="cta-btn cta-primary">Book a demo</a>
+                <a href="#" class="cta-btn cta-secondary">Talk with sales</a>
+            </div>
+        </div>
+
+        <div class="hero-right">
+            <div class="stat-card stat-top-left">
+                <h3>18.1M+</h3>
+                <p>members taken care of every day, across more than 800 clients</p>
+            </div>
+
+            <div class="hero-image">
+                <div class="hero-image-overlay">
+                    It's technology, powered by people
+                </div>
+            </div>
+
+            <div class="stat-card stat-bottom-left">
+                <h3>7,700+ Hours</h3>
+                <p>saved annually for HR and employees with smarter technology</p>
+            </div>
+
+            <div class="stat-card stat-bottom-right">
+                <h3>$400M</h3>
+                <p>in efficiency gains annually with empathetic tech-enabled service</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chat Widget Container - Amazon Connect Integration Point -->
+    <div class="chat-widget-container">
+        <!-- ============================================ -->
+        <!-- AMAZON CONNECT CHAT WIDGET PLACEHOLDER -->
+        <!-- Replace the content below with your Amazon Connect widget code -->
+        <!-- ============================================ -->
+        <div class="chat-placeholder" id="chatButton" onclick="initializeChat()">
+            <svg class="chat-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z" fill="white"/>
+                <circle cx="8" cy="10" r="1" fill="white"/>
+                <circle cx="12" cy="10" r="1" fill="white"/>
+                <circle cx="16" cy="10" r="1" fill="white"/>
+            </svg>
+        </div>
+        <!-- ============================================ -->
+        <!-- END AMAZON CONNECT WIDGET PLACEHOLDER -->
+        <!-- ============================================ -->
+    </div>
+
+    <script>
+        // Smooth animations on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const fadeInObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Apply fade-in animation to stat cards
+        document.querySelectorAll('.stat-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            fadeInObserver.observe(card);
+        });
+
+        // Banner arrow functionality
+        document.querySelectorAll('.banner-arrow').forEach(arrow => {
+            arrow.addEventListener('click', function() {
+                console.log('Banner navigation clicked');
+                // Add your banner navigation logic here
+            });
+        });
+
+        // ============================================
+        // AMAZON CONNECT CHAT WIDGET INITIALIZATION
+        // Replace this function with your Amazon Connect widget initialization code
+        // ============================================
+        function initializeChat() {
+            console.log('Chat widget clicked - Add your Amazon Connect initialization here');
+            
+            // Example: Your Amazon Connect widget initialization would go here
+            // amazon_connect('init', {
+            //     instanceUrl: 'your-instance-url',
+            //     contactFlowId: 'your-contact-flow-id',
+            //     // ... other configuration
+            // });
+            
+            alert('Replace this with your Amazon Connect chat widget initialization code');
+        }
+        // ============================================
+        // END AMAZON CONNECT INITIALIZATION
+        // ============================================
+
+        // Smooth scroll for CTA buttons
+        document.querySelectorAll('.cta-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1)';
+                }, 150);
+            });
+        });
+
+        // Add hover effect to logo
+        document.querySelector('.logo').addEventListener('mouseenter', function() {
+            this.querySelector('.logo-icon').style.transform = 'rotate(360deg)';
+            this.querySelector('.logo-icon').style.transition = 'transform 0.6s ease';
+        });
+
+        document.querySelector('.logo').addEventListener('mouseleave', function() {
+            this.querySelector('.logo-icon').style.transform = 'rotate(0deg)';
+        });
+    </script>
+</body>
+</html>
